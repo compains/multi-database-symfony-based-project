@@ -1,0 +1,21 @@
+version: '3'
+services:
+  app:
+    build: ./docker/dev
+    ports:
+      - 8081:80
+    volumes:
+      - ./:/var/www/html
+      - ./docker/site.conf:/etc/apache2/sites-enabled/000-default.conf
+    environment:
+      - DATABASE_URL=mysql://root:root@mysql:3306/app_dev
+  mysql:
+    image: mysql:8.0.34
+    ports:
+      - 3306:3306
+    command: --sql_mode="" --max_allowed_packet=32505856
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./docker/data/mysql8:/var/lib/mysql
+    restart: unless-stopped

@@ -1,0 +1,16 @@
+GET localhost:8081/api?username=John%20Appleseed
+Origin: customer_a.localhost
+####
+
+GET localhost:8081/api?username=John%20Appleseed
+Origin: customer_b.localhost
+
+
+###
+POST localhost:8081/api/user
+Origin: customer_b.localhost
+Content-Type: application/json
+
+{
+    "username": "John Appleseed"
+}
