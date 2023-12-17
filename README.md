@@ -34,5 +34,5 @@ The controller would be available at localhost:8081 and the created databases wi
 You can change the ports in the docker-compose.yaml file.
 
 ## Disclaimer
-This project has been created just as code demostration of this post. It`s not supported and not intended to be used at production environments.
+This project has been created just as code demostration of [this post](https://carlos-compains.medium.com/multi-database-doctrine-symfony-based-project-0c1e175b64bf). It`s not supported and not intended to be used at production environments.
 Some code has been pasted from other projects, so you may find some unused code.
